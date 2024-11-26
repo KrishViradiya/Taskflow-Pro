@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* FullCalendar Dark Mode Styles */
+.dark .fc {
+  --fc-border-color: rgb(55 65 81); /* gray-700 */
+  --fc-button-bg-color: rgb(59 130 246); /* blue-500 */
+  --fc-button-border-color: rgb(59 130 246); /* blue-500 */
+  --fc-button-hover-bg-color: rgb(37 99 235); /* blue-600 */
+  --fc-button-hover-border-color: rgb(37 99 235); /* blue-600 */
+  --fc-button-active-bg-color: rgb(29 78 216); /* blue-700 */
+  --fc-button-active-border-color: rgb(29 78 216); /* blue-700 */
+  --fc-event-bg-color: rgb(59 130 246); /* blue-500 */
+  --fc-event-border-color: rgb(59 130 246); /* blue-500 */
+  --fc-page-bg-color: rgb(31 41 55); /* gray-800 */
+  --fc-neutral-bg-color: rgb(31 41 55); /* gray-800 */
+  --fc-neutral-text-color: rgb(229 231 235); /* gray-200 */
+  --fc-today-bg-color: rgba(59, 130, 246, 0.1); /* blue-500 with opacity */
+}
+
+.dark .fc-day-today {
+  background: var(--fc-today-bg-color) !important;
+}
+
+.dark .fc-button-primary {
+  background-color: var(--fc-button-bg-color) !important;
+  border-color: var(--fc-button-border-color) !important;
+}
+
+.dark .fc-button-primary:hover {
+  background-color: var(--fc-button-hover-bg-color) !important;
+  border-color: var(--fc-button-hover-border-color) !important;
+}
+
+.dark .fc-button-primary:not(:disabled):active,
+.dark .fc-button-primary:not(:disabled).fc-button-active {
+  background-color: var(--fc-button-active-bg-color) !important;
+  border-color: var(--fc-button-active-border-color) !important;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .fc {
+    font-size: 0.875rem;
+  }
+
+  .fc .fc-toolbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .fc .fc-toolbar-title {
+    font-size: 1.25rem;
+  }
+
+  .fc .fc-button {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .fc .fc-view-harness {
+    height: auto !important;
+    min-height: 400px;
+  }
+
+  .fc .fc-daygrid-day-number {
+    padding: 4px 8px;
+  }
+
+  .fc .fc-daygrid-day-events {
+    margin: 0;
+  }
+
+  .fc .fc-event {
+    margin: 1px 2px;
+    padding: 2px 4px;
+  }
+
+  .fc .fc-toolbar.fc-header-toolbar {
+    margin-bottom: 1rem;
+  }
+
+  .fc .fc-toolbar-chunk {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .fc .fc-toolbar-chunk:first-child {
+    justify-content: space-between;
+  }
+}
+
+/* Ensure calendar fits container */
+.task-calendar .fc {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Improve event text visibility */
+.fc-event-title {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Better scrolling on mobile */
+.task-calendar {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ReactFlow styles */
+.react-flow__node {
+  @apply shadow-sm;
+}
+
+.react-flow__handle {
+  @apply w-3 h-3 bg-blue-500;
+}
+
+.react-flow__controls {
+  @apply bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700;
+}
+
+.react-flow__controls-button {
+  @apply border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700;
+}
+
+.react-flow__minimap {
+  @apply bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700;
+}
+
+.react-flow__attribution {
+  @apply bg-transparent;
+}
+
+.dark .react-flow__attribution a {
+  @apply text-gray-400;
+}
+
+
+/* Add to your index.css */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* For all chart containers */
+.chart-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden;
+}
